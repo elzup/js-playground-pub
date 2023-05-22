@@ -1,0 +1,23 @@
+{
+	"day": {
+		"shape": "circle",
+		"positionDef": "key is hour. value is RATE. RATE: 0 top, 25 right, 50 bottom, 75 left, 100 top.",
+		"position": {
+			"0": "50",
+			"0": "50"
+		}
+	},
+	"years": {
+		"shape": "bar",
+		"details": "1000年ごとに大きい区切り線。10年ごとに区切り線。"
+	},
+	"year": {
+		"shape": "circle",
+		"details": "1年で1周。一ヶ月毎に区切り線。",
+		"positionDef": "key→月。value→レート。0 top, 25 right, 50 bottom, 75 left, 100 top.",
+		"position": {
+			"1": 75,
+			"2": 80
+		}
+	}
+}

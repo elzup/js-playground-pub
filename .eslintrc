@@ -1,0 +1,8 @@
+{
+	"extends": ["nzap", "nzap/typescript", "nzap/jest"],
+	"rules": {
+		"no-console": "off",
+		"@typescript-eslint/prefer-for-of": "off",
+		"@typescript-eslint/restrict-plus-operands": "off"
+	}
+}

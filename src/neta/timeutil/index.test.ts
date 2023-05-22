@@ -1,0 +1,16 @@
+const has31 = (month) => Boolean((month & 1) ^ ((month >> 3) & 1))
+
+test('1-12', () => {
+	expect(has31(1)).toMatchInlineSnapshot(`true`)
+	expect(has31(2)).toMatchInlineSnapshot(`false`)
+	expect(has31(3)).toMatchInlineSnapshot(`true`)
+	expect(has31(4)).toMatchInlineSnapshot(`false`)
+	expect(has31(5)).toMatchInlineSnapshot(`true`)
+	expect(has31(6)).toMatchInlineSnapshot(`false`)
+	expect(has31(7)).toMatchInlineSnapshot(`true`)
+	expect(has31(8)).toMatchInlineSnapshot(`true`)
+	expect(has31(9)).toMatchInlineSnapshot(`false`)
+	expect(has31(10)).toMatchInlineSnapshot(`true`)
+	expect(has31(11)).toMatchInlineSnapshot(`false`)
+	expect(has31(12)).toMatchInlineSnapshot(`true`)
+})
