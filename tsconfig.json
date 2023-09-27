@@ -15,7 +15,8 @@
 		"isolatedModules": false,
 		"noEmit": true,
 		"types": ["node", "@types/jest"],
-		"baseUrl": "src/@types"
+		"baseUrl": "src/@types",
+		"experimentalDecorators": true
 	},
 	"include": ["src"],
 	"exclude": ["node_modules", "**/*.es.js"]
