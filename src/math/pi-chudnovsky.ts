@@ -9,11 +9,11 @@ const factorial = (n: number) => {
 	return t
 }
 
-const chudnovskySub = (n: number) => {
+const chudnovskySub = (n = 1) => {
 	const a = (-1) ** n * factorial(6 * n) * (13591409 + 545140134 * n)
 	const b = factorial(3 * n) * factorial(n) ** 3 * 640320 ** (3 * n + 3 / 2)
 
-	console.log(`sub ${n}: ${a} ${b}`)
+	// console.log(`sub ${n}: ${a} ${b}`)
 
 	return a / b
 }
@@ -27,4 +27,9 @@ const chudnovsky = (n: number) => {
 	return 1 / (t * 12)
 }
 
-console.log(chudnovsky(1))
+for (let i = 0; i < 10; i++) {
+	const start = Date.now()
+
+	console.log(i, chudnovsky(i))
+	console.log(`time: ${Date.now() - start}ms`)
+}
