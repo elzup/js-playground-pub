@@ -87,4 +87,17 @@ test('object default arg', () => {
 		  "h": 1,
 		}
 	`)
+
+	expect(objFunc()).toMatchInlineSnapshot(`
+		Object {
+		  "a": undefined,
+		  "b": undefined,
+		  "c": 2,
+		  "d": 2,
+		  "e": 1,
+		  "f": 1,
+		  "g": 2,
+		  "h": 2,
+		}
+	`)
 })
