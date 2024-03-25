@@ -7,12 +7,12 @@ test('works', () => {
 	]
 
 	expect(_.keyBy(a, 'id')).toMatchInlineSnapshot(`
-Object {
-  "bar": Object {
+{
+  "bar": {
     "id": "bar",
     "v": 200,
   },
-  "foo": Object {
+  "foo": {
     "id": "foo",
     "v": 100,
   },
@@ -20,12 +20,12 @@ Object {
 `)
 
 	expect(_.mapKeys(a, 'id')).toMatchInlineSnapshot(`
-Object {
-  "bar": Object {
+{
+  "bar": {
     "id": "bar",
     "v": 200,
   },
-  "foo": Object {
+  "foo": {
     "id": "foo",
     "v": 100,
   },

@@ -7,7 +7,7 @@ test('count', () => {
 	expect(isLeapYear(2000)).toMatchInlineSnapshot(`true`)
 
 	expect(range(1, 4)).toMatchInlineSnapshot(`
-Array [
+[
   1,
   2,
   3,
@@ -15,14 +15,14 @@ Array [
 ]
 `)
 	expect(range(1, 1)).toMatchInlineSnapshot(`
-Array [
+[
   1,
 ]
 `)
 
-	expect(range(1, 12).map((mi) => `${mi}: ${is31month(mi)}`))
-		.toMatchInlineSnapshot(`
-Array [
+	expect(range(1, 12).map((mi) => `${mi}: ${is31month(mi)}`)).
+toMatchInlineSnapshot(`
+[
   "1: 1",
   "2: 0",
   "3: 1",

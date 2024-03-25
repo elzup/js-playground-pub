@@ -29,26 +29,26 @@ test('works', () => {
 	const message = 'cpslab'.split('').map(toMessage)
 
 	expect(message).toMatchInlineSnapshot(`
-Array [
-  Array [
+[
+  [
     "110",
   ],
-  Array [
+  [
     "000",
     "010",
   ],
-  Array [
+  [
     "110",
     "010",
   ],
-  Array [
+  [
     "001",
     "100",
   ],
-  Array [
+  [
     "100",
   ],
-  Array [
+  [
     "010",
   ],
 ]

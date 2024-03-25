@@ -23,18 +23,14 @@ test('works', () => {
 	expect(funcC(1)).toMatchInlineSnapshot(`1`)
 	expect(funcC(1, 100)).toMatchInlineSnapshot(`101`)
 
-	expect(f((a) => JSON.stringify(a))).toMatchInlineSnapshot(
-		`"{\\"left\\":\\"pen\\",\\"right\\":\\"apple\\"}"`
-	)
+	expect(f((a) => JSON.stringify(a))).toMatchInlineSnapshot(`"{"left":"pen","right":"apple"}"`)
 	expect(f(JSON.stringify)).toMatchInlineSnapshot(`
-		"{
-		  \\"left\\": \\"pen\\",
-		  \\"right\\": \\"apple\\"
-		}"
-	`)
-	expect(f((...a) => JSON.stringify(a))).toMatchInlineSnapshot(
-		`"[{\\"left\\":\\"pen\\",\\"right\\":\\"apple\\"},null,2]"`
-	)
+"{
+  "left": "pen",
+  "right": "apple"
+}"
+`)
+	expect(f((...a) => JSON.stringify(a))).toMatchInlineSnapshot(`"[{"left":"pen","right":"apple"},null,2]"`)
 })
 
 type Params = Partial<{
@@ -49,7 +45,7 @@ type Params = Partial<{
 }>
 
 test('object default arg', () => {
-	expect((() => ({}))()).toMatchInlineSnapshot(`Object {}`)
+	expect((() => ({}))()).toMatchInlineSnapshot(`{}`)
 
 	const objFunc = (
 		{ a, b, c, d, e = 1, f = 1, g = 1, h = 1 }: Params = {
@@ -65,39 +61,39 @@ test('object default arg', () => {
 	) => ({ a, b, c, d, e, f, g, h })
 
 	expect(
-		objFunc({
-			a: 3,
-			// b: 3,
-			c: 3,
-			// d: 3,
-			e: 3,
-			// f: 3,
-			g: 3,
-			// h: 3,
-		})
-	).toMatchInlineSnapshot(`
-		Object {
-		  "a": 3,
-		  "b": undefined,
-		  "c": 3,
-		  "d": undefined,
-		  "e": 3,
-		  "f": 1,
-		  "g": 3,
-		  "h": 1,
-		}
-	`)
+objFunc({
+  a: 3,
+  // b: 3,
+  c: 3,
+  // d: 3,
+  e: 3,
+  // f: 3,
+  g: 3
+  // h: 3,
+})
+).toMatchInlineSnapshot(`
+{
+  "a": 3,
+  "b": undefined,
+  "c": 3,
+  "d": undefined,
+  "e": 3,
+  "f": 1,
+  "g": 3,
+  "h": 1,
+}
+`)
 
 	expect(objFunc()).toMatchInlineSnapshot(`
-		Object {
-		  "a": undefined,
-		  "b": undefined,
-		  "c": 2,
-		  "d": 2,
-		  "e": 1,
-		  "f": 1,
-		  "g": 2,
-		  "h": 2,
-		}
-	`)
+{
+  "a": undefined,
+  "b": undefined,
+  "c": 2,
+  "d": 2,
+  "e": 1,
+  "f": 1,
+  "g": 2,
+  "h": 2,
+}
+`)
 })

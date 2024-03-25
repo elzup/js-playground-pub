@@ -19,18 +19,18 @@ const res = a.reduce((p, c) => {
 
 test('works', () => {
 	expect(hello(10)).toMatchInlineSnapshot(`
-Array [
+[
   10,
 ]
 `)
 	expect(hello(10, 20)).toMatchInlineSnapshot(`
-Array [
+[
   10,
   20,
 ]
 `)
 	expect(hello(10, ...[])).toMatchInlineSnapshot(`
-Array [
+[
   10,
 ]
 `)

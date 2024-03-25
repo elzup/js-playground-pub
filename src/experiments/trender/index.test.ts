@@ -30,24 +30,24 @@ test('works', () => {
 	}
 
 	expect(calc(currentWords, 61000, oldCaptures)).toMatchInlineSnapshot(`
-		Object {
-		  "captures": Object {
-		    "apple": Object {
-		      "count": 100,
-		      "score": 50,
-		    },
-		    "bob": Object {
-		      "count": 51,
-		      "score": 1,
-		    },
-		    "cookie": Object {
-		      "count": 500,
-		      "score": 0,
-		    },
-		  },
-		  "timestamp": 61000,
-		}
-	`)
+{
+  "captures": {
+    "apple": {
+      "count": 100,
+      "score": 50,
+    },
+    "bob": {
+      "count": 51,
+      "score": 1,
+    },
+    "cookie": {
+      "count": 500,
+      "score": 0,
+    },
+  },
+  "timestamp": 61000,
+}
+`)
 	// cached new
 	// caled
 	// older deleted
