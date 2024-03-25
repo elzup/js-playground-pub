@@ -37,39 +37,35 @@ test('works', () => {
 	)
 })
 
+type Params = Partial<{
+	a: number
+	b: number
+	c: number
+	d: number
+	e: number
+	f: number
+	g: number
+	h: number
+}>
+
 test('object default arg', () => {
 	expect((() => ({}))()).toMatchInlineSnapshot(`Object {}`)
+
+	const objFunc = (
+		{ a, b, c, d, e = 1, f = 1, g = 1, h = 1 }: Params = {
+			// a,
+			// b,
+			c: 2,
+			d: 2,
+			// e,
+			// f,
+			g: 2,
+			h: 2,
+		}
+	) => ({ a, b, c, d, e, f, g, h })
+
 	expect(
-		((
-			{
-				a,
-				b,
-				c,
-				d,
-				e = 1,
-				f = 1,
-				g = 1,
-				h = 1,
-			}: {
-				a?: number
-				b?: number
-				c?: number
-				d?: number
-				e?: number
-				f?: number
-				g?: number
-				h?: number
-			} = {
-				// a,
-				// b,
-				c: 2,
-				d: 2,
-				// e,
-				// f,
-				g: 2,
-				h: 2,
-			}
-		) => ({ a, b, c, d, e, f, g, h }))({
+		objFunc({
 			a: 3,
 			// b: 3,
 			c: 3,
