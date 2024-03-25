@@ -27,12 +27,68 @@ test('works', () => {
 		`"{\\"left\\":\\"pen\\",\\"right\\":\\"apple\\"}"`
 	)
 	expect(f(JSON.stringify)).toMatchInlineSnapshot(`
-"{
-  \\"left\\": \\"pen\\",
-  \\"right\\": \\"apple\\"
-}"
-`)
+		"{
+		  \\"left\\": \\"pen\\",
+		  \\"right\\": \\"apple\\"
+		}"
+	`)
 	expect(f((...a) => JSON.stringify(a))).toMatchInlineSnapshot(
 		`"[{\\"left\\":\\"pen\\",\\"right\\":\\"apple\\"},null,2]"`
 	)
+})
+
+test('object default arg', () => {
+	expect((() => ({}))()).toMatchInlineSnapshot(`Object {}`)
+	expect(
+		((
+			{
+				a,
+				b,
+				c,
+				d,
+				e = 1,
+				f = 1,
+				g = 1,
+				h = 1,
+			}: {
+				a?: number
+				b?: number
+				c?: number
+				d?: number
+				e?: number
+				f?: number
+				g?: number
+				h?: number
+			} = {
+				// a,
+				// b,
+				c: 2,
+				d: 2,
+				// e,
+				// f,
+				g: 2,
+				h: 2,
+			}
+		) => ({ a, b, c, d, e, f, g, h }))({
+			a: 3,
+			// b: 3,
+			c: 3,
+			// d: 3,
+			e: 3,
+			// f: 3,
+			g: 3,
+			// h: 3,
+		})
+	).toMatchInlineSnapshot(`
+		Object {
+		  "a": 3,
+		  "b": undefined,
+		  "c": 3,
+		  "d": undefined,
+		  "e": 3,
+		  "f": 1,
+		  "g": 3,
+		  "h": 1,
+		}
+	`)
 })
