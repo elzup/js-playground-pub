@@ -1,7 +1,10 @@
 {
-	"useTabs": true,
+  "useTabs": true,
   "tabWidth": 2,
   "singleQuote": true,
   "semi": false,
-  "trailingComma": "es5"
+  "trailingComma": "es5",
+  "overrides": [
+    { "files": ["*.json", ".prettierrc"], "options": { "useTabs": false } }
+  ]
 }
