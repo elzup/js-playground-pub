@@ -39,6 +39,7 @@
     "jimp": "^0.16.1",
     "jptext-to-emoji": "^0.3.0",
     "js-vim-commands": "^0.0.0",
+    "js-yaml": "^4.1.0",
     "keypress": "^0.2.1",
     "kuromojin": "^3.0.0",
     "lodash": "^4.17.11",
