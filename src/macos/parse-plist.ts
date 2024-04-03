@@ -1,17 +1,17 @@
-import plist from 'plist'
 import fs from 'fs'
-import { homedir } from 'os'
+import * as plist from 'simple-plist'
 
-const shortcutConfigPath = `${homedir()}/Library/Preferences/com.apple.symbolichotkeys.plist`
-
-const readPlist = (path: string) => {
-	const plistFileContent = fs.readFileSync(path, 'utf8')
-
-	return plist.parse(plistFileContent)
-}
-
+const shortcutPath = '~/Library/Preferences/com.apple.symbolichotkeys.plist'
 function main() {
-	console.log(readPlist(shortcutConfigPath))
+	const data = plist.default.readFileSync(
+		process.argv[2] || shortcutPath
+	) as any
+	console.log(process.argv[2])
+
+	for (const [k, v] of Object.entries(data.AppleSymbolicHotKeys)) {
+		console.log(k)
+		console.log(v)
+	}
 }
 
 main()
