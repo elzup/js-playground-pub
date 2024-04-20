@@ -1,8 +1,7 @@
 import crypto from 'crypto'
 
-const workByte = 4
-
-function findBuffer(prefix) {
+function findBuffer(prefix = '', workByte = 4) {
+	console.log(`need ${2 ** (workByte * 4)} steps`)
 	const prefixBuffer = Buffer.from(prefix, 'hex')
 
 	let nonce = 0
@@ -20,4 +19,4 @@ function findBuffer(prefix) {
 	}
 }
 
-findBuffer('0000000000000000001')
+findBuffer('0000000000000000002', 6)
