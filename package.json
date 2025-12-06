@@ -33,6 +33,7 @@
     "cron-schedule": "^4.0.0",
     "d3-node": "^3.0.0",
     "diff": "^5.2.0",
+    "interval-scheduling": "^1.0.4",
     "jaco": "^4.0.0",
     "japanese-holidays": "1.0.10",
     "jest": "^29.7.0",

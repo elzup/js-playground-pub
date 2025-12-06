@@ -1,6 +1,8 @@
 const config = {
 	testEnvironment: 'node',
+	roots: ['<rootDir>/src'],
 	testMatch: ['**/*.test.js', '**/*.test.ts'],
+	watchman: false,
 	// setupFilesAfterEnv: ['<rootDir>/src/test/utils/setup.ts'],
 
 	testPathIgnorePatterns: [
